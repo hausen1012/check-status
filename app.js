@@ -25,7 +25,7 @@ async function checkWebsite() {
 // 定义一个 API 路由来访问该函数
 app.get("*", async (req, res) => {
   const status = await checkWebsite();
-  res.send({ status });
+  res.send(status); // 直接返回 true 或 false
 });
 
 // 启动服务
