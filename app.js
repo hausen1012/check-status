@@ -23,9 +23,9 @@ async function checkWebsite() {
 }
 
 // 定义一个 API 路由来访问该函数
-app.get("/check-website", async (req, res) => {
-  const isAvailable = await checkWebsite();
-  res.json({ success: isAvailable });
+app.get("*", async (req, res) => {
+  const status = await checkWebsite();
+  res.send({ status });
 });
 
 // 启动服务
