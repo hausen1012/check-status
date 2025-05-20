@@ -4,6 +4,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// 启用 CORS（允许所有来源，如有需要可指定 origin）
+app.use(cors());
+
 // 从环境变量获取网站 URL
 const targetUrl = process.env.TARGET_URL;
 
